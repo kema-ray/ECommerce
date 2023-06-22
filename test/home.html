@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce Web App - Home</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Welcome to the Ecommerce Web App</h2>
+    <h3>Home Page</h3>
+    <p>You are logged in as: <span id="user-name"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Retrieve the user from session storage
+    var user = JSON.parse(sessionStorage.getItem('user'));
+    if (user) {
+      // Display the user's name on the home page
+      document.getElementById('user-name').textContent = user.name;
+    } else {
+      // Redirect to the login page if not logged in
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
